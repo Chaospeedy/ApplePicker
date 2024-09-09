@@ -308,6 +308,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7424755916742524866, guid: 0784179a6e7b0d049ac19b00df433336, type: 3}
+      propertyPath: applePrefab
+      value: 
+      objectReference: {fileID: 3965659034765069234, guid: ff78fd0338793054f80a6045c20c3140, type: 3}
     - target: {fileID: 1348397807422512227, guid: 0784179a6e7b0d049ac19b00df433336, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -318,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1348397807422512227, guid: 0784179a6e7b0d049ac19b00df433336, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1348397807422512227, guid: 0784179a6e7b0d049ac19b00df433336, type: 3}
       propertyPath: m_LocalPosition.z
@@ -351,6 +355,10 @@ PrefabInstance:
     - target: {fileID: 1348397807422512227, guid: 0784179a6e7b0d049ac19b00df433336, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348397807422512252, guid: 0784179a6e7b0d049ac19b00df433336, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1348397807422512253, guid: 0784179a6e7b0d049ac19b00df433336, type: 3}
       propertyPath: m_Name
