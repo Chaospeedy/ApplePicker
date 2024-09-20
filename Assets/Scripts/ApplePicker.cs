@@ -11,9 +11,13 @@ public class ApplePicker : MonoBehaviour
     public float basketBottomY = -14f;
     public float basketSpacingY = 1.5f;
     public List<GameObject> basketList;
+    public RoundTracker roundTracker;
+
 
     void Start()
     {
+        GameObject roundGO = GameObject.Find("RoundTracker");
+        roundTracker = roundGO.GetComponent<RoundTracker>();
         basketList = new List<GameObject>();
         for(int i = 0; i < numBaskets; i++){
             GameObject tBasketGO = Instantiate<GameObject>(basketPrefab);
@@ -25,7 +29,11 @@ public class ApplePicker : MonoBehaviour
     }
     public void AppleMissed(){
         GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
+        GameObject[] branchArray = GameObject.FindGameObjectsWithTag("Branch");
         foreach(GameObject tempGO in appleArray){
+            Destroy(tempGO);
+        }
+        foreach(GameObject tempGO in branchArray){
             Destroy(tempGO);
         }
 
@@ -35,11 +43,27 @@ public class ApplePicker : MonoBehaviour
 
         basketList.RemoveAt(basketIndex);
         Destroy(basketGO);
+        roundTracker.round++;
 
         if(basketList.Count == 0){
-            SceneManager.LoadScene("SampleScene");
+            Time.timeScale = 0;
         }
     }
+
+    public void BranchCaught(){
+        GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
+        GameObject[] branchArray = GameObject.FindGameObjectsWithTag("Branch");
+        foreach(GameObject tempGO in appleArray){
+            Destroy(tempGO);
+        }
+        foreach(GameObject tempGO in branchArray){
+            Destroy(tempGO);
+        }
+        foreach(GameObject tempGO in basketList){
+            Destroy(tempGO);
+        }
+    }
+
 
     // Update is called once per frame
     void Update()

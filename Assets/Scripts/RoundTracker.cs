@@ -18,6 +18,12 @@ public class RoundTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        uiText.text = "Round " + round;
+        if(round > 4){
+            uiText.text = "Game Over";
+            
+        }else{
+            uiText.text = "Round " + round;
+        }
+        
     }
 }
